@@ -697,7 +697,9 @@
             self.el.className += ' is-bound';
             addEvent(opts.trigger, 'click', self._onInputClick);
             addEvent(opts.trigger, 'focus', self._onInputFocus);
-            addEvent(opts.trigger, 'blur', self._onInputBlur);
+            // On iOS selecting a month or year triggers the blur event and
+            // closes the calendar.
+            //addEvent(opts.trigger, 'blur', self._onInputBlur);
         } else {
             this.show();
         }
